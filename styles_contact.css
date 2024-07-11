@@ -1,0 +1,28 @@
+.contact-item {
+    display: flex; 
+    flex-direction: row;
+}
+.contact-item a {
+    color: rgb(180, 180, 180);
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: rgb(20, 10, 82);
+}
+
+.contact-icon {
+    background: #d4d9df;
+    border: 2px solid #d4d9df;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.contact-icon img{
+    width: 20px;
+    height: 20px;
+}

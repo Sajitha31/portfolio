@@ -1,0 +1,75 @@
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill-card {
+    background-color: rgba(255, 255, 255, 0.295);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+    width: 100px;
+    margin: 10px;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    background-color: #f4f4f4;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px auto;
+}
+
+.skill-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+h3 {
+    font-size: 13px;
+    color: #333;
+}
+
+.skill-card:nth-child(1) .skill-icon {
+    background-color: white; /* Blue */
+}
+
+.skill-card:nth-child(2) .skill-icon {
+    background-color: white; /* Red */
+}
+
+.skill-card:nth-child(3) .skill-icon {
+    background-color: white; /* Yellow */
+}
+
+.skill-card:nth-child(4) .skill-icon {
+    background-color: white; /* Purple */
+}
+
+.skill-card:nth-child(5) .skill-icon {
+    background-color: white; /* Green */
+}
+
+.skill-card:nth-child(6) .skill-icon {
+    background-color: white; /* Dark Blue */
+}
+.skill-card:nth-child(7) .skill-icon {
+    background-color: white; /* Dark Blue */
+}
+.skill-card:nth-child(8) .skill-icon {
+    background-color: white; /* Dark Blue */
+}
+
