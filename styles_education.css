@@ -33,9 +33,7 @@
 .timeline-item:nth-child(3) {
     flex-direction: row-reverse;
 }
-.timeline-item:nth-child(4) {
-    flex-direction: row-reverse;
-}
+
 
 .timeline-icon {
     position: absolute;
@@ -102,5 +100,3 @@ p {
     height: 15px;
     width: 25px;
 }
-
-
