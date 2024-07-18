@@ -1,14 +1,10 @@
 .contact-item {
-    display: flex;
+    display: flex; 
     flex-direction: row;
-    align-items: center; /* Ensures vertical alignment of items */
-    margin-bottom: 10px; /* Adds spacing between contact items */
 }
-
 .contact-item a {
     color: rgb(180, 180, 180);
     text-decoration: none;
-    margin-left: 10px; /* Adds spacing between icon and text */
 }
 
 .contact-item a:hover {
@@ -26,37 +22,7 @@
     align-items: center;
     justify-content: center;
 }
-
-.contact-icon img {
+.contact-icon img{
     width: 20px;
     height: 20px;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .contact-item {
-        flex-direction: column;
-        align-items: flex-start; /* Align items to the start in column direction */
-    }
-
-    .contact-item a {
-        margin-left: 0;
-        margin-top: 5px; /* Adds spacing between icon and text when stacked */
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-icon {
-        width: 30px;
-        height: 30px;
-    }
-
-    .contact-icon img {
-        width: 15px;
-        height: 15px;
-    }
-
-    .contact-item a {
-        font-size: 14px; /* Reduces font size for smaller screens */
-    }
 }
