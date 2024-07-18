@@ -1,57 +1,93 @@
 .design {
     display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
     gap: 30px;
+    justify-content: center; /* Centers items in the container */
+}
+
+.design-card, .design-card2 {
+    background-color: rgba(255, 255, 255, 0.295);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    transition: transform 0.5s; /* Smooth transition for hover effects */
 }
 
 .design-card {
-    background-color: rgba(255, 255, 255, 0.295);
     width: 120px;
     height: 120px;
     border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    overflow: hidden;
-}
-.design-card:hover a img{
-    transform: scale(1.2);
 }
 
 .design-card a img {
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    height: 100%;
     transition: transform 0.5s;
 }
+
+.design-card:hover a img {
+    transform: scale(1.2);
+}
+
 .design-card2 {
-    background-color: rgba(255, 255, 255, 0.295);
     width: 180px;
     height: 40px;
     border-radius: 5px;
-    text-align: center;
+    display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    overflow: hidden;
+    text-align: center;
 }
-.design-card2 a{
+
+.design-card2 a {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
     background: -webkit-linear-gradient(#eee, #a2c8d4,#eee);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    align-items: center;
     text-decoration: none;
-    transition: transform 0.5s;
+    width: 100%; /* Ensures the link covers the full width */
+    height: 100%; /* Ensures the link covers the full height */
 }
+
 .design-card2:hover a {
     transform: scale(1.2);
 }
 
-.design-card2 a h3{
-    width: 120px;
-    height: 120px;
+.design-card2 a h3 {
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    .design-card, .design-card2 {
+        width: 100px; /* Smaller width for medium screens */
+        height: auto; /* Adjust height to content */
+    }
+
+    .design-card a img, .design-card2 a h3 {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .design-card, .design-card2 {
+        width: 80px; /* Smaller width for small screens */
+        height: auto; /* Adjust height to content */
+    }
+
+    .design-card a img, .design-card2 a h3 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .design-card2 a {
+        font-size: 12px; /* Smaller font size for small screens */
+    }
+}
+
 
 
 
