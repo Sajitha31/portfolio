@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="styles_design.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-gradient: linear-gradient(to right, #A43931, #1D4350);
+            --text-gradient: linear-gradient(#eee, #558696, #eee);
+            --secondary-text-gradient: linear-gradient(#eee, #a2c8d4, #eee);
+            --highlight-text-gradient: linear-gradient(#366979, #7da6b3, #366979);
+            --text-color: #D3D3D3;
+            --highlight-color: #102d36;
+        }
+
         body, html {
             margin: 0;
             padding: 0;
@@ -18,9 +27,7 @@
             height: 100%;
             font-family: 'Roboto', sans-serif;
             display: flex;
-            background: #1D4350;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #A43931, #1D4350);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #A43931, #1D4350); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: var(--bg-gradient);
         }
 
         .sidebar {
@@ -30,8 +37,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            object-fit: cover;
             padding-top: 30px;
+            position: fixed;
         }
 
         .sidebar img {
@@ -39,28 +46,24 @@
             width: 150px;
             height: 150px;
             background-color: #D3D3D3;
-            object-fit: cover;
-            margin-top: 20px;
-            margin-bottom: 15px;
-            padding: 0;
+            margin: 20px 0 15px;
         }
 
         .sidebar h2 {
-            background: -webkit-linear-gradient(#eee, #77a0ad,#eee);
+            background: var(--text-gradient);
             background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 10px 0;
         }
 
-        .sidebar p {
+        .sidebar p, .sidebar a {
             font-size: 15px;
-            margin: 0 0 0 0;
-            color: #D3D3D3;
+            margin: 0;
+            color: var(--text-color);
         }
 
         .sidebar a {
             font-size: 13px;
-            color: #D3D3D3;
             text-decoration: none;
             margin: 8px 0;
         }
@@ -72,180 +75,163 @@
 
         .main-content {
             width: 100%;
-            background: #1D4350;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #A43931, #1D4350);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #A43931, #1D4350); 
+            background: var(--bg-gradient);
+            display: flex;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            object-fit: cover;
-        }
-        .main-content2 {
-            width: 100%;
-            align-items: center;
-            text-align: center;
-            object-fit: cover;
         }
 
-        .main-content h1 {
-            background: -webkit-linear-gradient(#eee, #558696,#eee);
+        .hero h1, .section h2, .section h3, .section h5, .section h4 {
+            background: var(--text-gradient);
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-size: 48px;
-            margin: 0;
-        }
-
-        .main-content p {
-            color: #D3D3D3;
-            font-size: 20px;
-            margin: 0 0 10px;
-        }
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: left;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 24px;
-            margin: 20px 0 0;
         }
 
         .section {
             padding: 50px 20px;
             width: fit-content;
-            height: 100%;
             margin: 20px 0;
-            align-items: center;
             text-align: left;
-            object-fit: cover;
         }
 
-        .section h2 {
-            background: -webkit-linear-gradient(#eee, #558696,#eee);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
         .section h3 {
-            background: -webkit-linear-gradient(#eee, #a2c8d4,#eee);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-top: 5%; 
+            background: var(--secondary-text-gradient);
+            margin-top: 5%;
             font-size: 19px;
             margin-bottom: 10px;
         }
-        .section h5 {
-            background: -webkit-linear-gradient(#366979, #7da6b3,#366979);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-top: 5%; 
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
+
         .section h4 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            background: -webkit-linear-gradient(#eee, #a2c8d4,#eee);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-top: 5%; 
+            background: var(--secondary-text-gradient);
             font-size: 17px;
+            margin-top: 5%;
             margin-bottom: 10px;
         }
-        .section p {
-            width: fit-content;
+
+        .section h5 {
+            background: var(--highlight-text-gradient);
+            font-size: 22px;
+            margin-top: 5%;
+            margin-bottom: 10px;
+        }
+
+        .section p, .section ul li {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: rgb(180, 180, 180);
+            color: var(--text-color);
             font-size: 15px;
             margin: 0;
         }
-        .section p a{
-            color: rgb(180, 180, 180);
+
+        .section p a {
+            color: var(--text-color);
             text-decoration: none;
-            margin-bottom: 40px;
         }
-        .section p a:hover{
+
+        .section p a:hover {
             color: black;
             text-decoration: underline;
         }
-        .section ul li {
-            width: fit-content;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: rgb(180, 180, 180);
-            font-size: 15px;
-            margin: 0;
-        }
-        .innersection{
-            padding-right: 2%; 
+
+        .innersection {
+            padding-right: 2%;
             padding-left: 30%;
+        }
+
+        .skills, .services, .design {
+            display: flex;
+            gap: 10px;
+        }
+
+        .service-card, .skill-card, .design-card, .design-card2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .service-card h3, .skill-card h3, .design-card h3, .design-card2 h3 {
+            font-size: 15px;
+            margin-top: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-icon img {
+            margin-right: 10px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3%;
+        }
+
+        .timeline-icon img {
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="main-content2">
-        <div class="sidebar" style="margin-bottom: 2.5%; display: flex; position: fixed;">
-            <img src="images/profile_pic.jpg" alt="Profile Picture">
-            <h2>Sajitha Francis</h2>
-            <p style="margin-bottom: 26px;">FRESHER</p>
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#projects">PROJECTS</a>
-            <a href="#experience">EXPERIENCE</a>
-            <a href="#skills">TECH SKILLS</a>
-            <a href="#education">EDUCATION</a>
-            <a href="#activities">ACTIVITIES</a>
-            <a href="#works">WORKS</a>
-            <a href="#contact">CONTACT</a>
+    <div class="sidebar">
+        <img src="images/profile_pic.jpg" alt="Profile Picture">
+        <h2>Sajitha Francis</h2>
+        <p>FRESHER</p>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#skills">TECH SKILLS</a>
+        <a href="#education">EDUCATION</a>
+        <a href="#activities">ACTIVITIES</a>
+        <a href="#works">WORKS</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+    <div class="main-content">
+        <div class="hero" id="home" style="flex-direction: column;">
+            <h1>Hello...<img src="images/gif3-unscreen.gif" style="height: 150px; width: 130px; margin-bottom: -20px; margin-left: -20px;"></h1>
+            <h1>Welcome to my portfolio</h1>
         </div>
-        <div class="main-content" style="height: 100%;">
-            <div class="hero" id="home" style="padding-left: 20%; flex-direction: column;">
-                <h1>Hello...<img src="images/gif3-unscreen.gif" style="height: 150px; width: 130px; margin-bottom: -20px; margin-left: -20px;"></h1>
-                <h1>Welcome to my portfolio</h1>
-            </div>
-        </div>
-        <div class="section" id="about">
-            <div class="innersection">>
-                <h2>About Me</h2>
-                <p style="margin-top: 5%;"><strong>Hy...I'm Sajitha Francis.</strong> I'm a dedicated and deterministic girl with a strong mindset to acheive new heights in my career with my knowledge and skills.</p>
-                <br><p>I'm recently completed my B-Tech degree in Computer Science from VJCET,Vazhakulam. I opted B-Tech as my career due to my strong passion for coding. My strengths include problem solving and time management. I try to make things perfect eventhough it does not demand and this is one of my weakness also since it may result in wasting a lot of time. Apart from academics I'm good at drawing and graphic designing . During my free time I usually help my mother or do some gardening works. My areas of interest mainly includes App development and Machine Learning.</p>
-                <h3 style="margin-top: 6%; font-size: 24px;">Interests</h3>
-                <div class="services" style="margin-top: 3%;">
-                    <div class="service-card">
-                        <div class="icon">
-                            <img src="images/ad_icon.png" alt="app" style="width: 60px; height: 60px;">
-                        </div>
-                        <h3 style="margin-top: 16px; font-size: 15px">App<br>Development</h3>
+    </div>
+    <div class="section" id="about">
+        <div class="innersection">
+            <h2>About Me</h2>
+            <p><strong>Hy...I'm Sajitha Francis.</strong> I'm a dedicated and deterministic girl with a strong mindset to achieve new heights in my career with my knowledge and skills.</p>
+            <br><p>I've recently completed my B-Tech degree in Computer Science from VJCET, Vazhakulam. I opted for B-Tech due to my strong passion for coding. My strengths include problem solving and time management. I try to make things perfect even when not required, which can also be a weakness as it may result in wasting a lot of time. Apart from academics, I'm good at drawing and graphic designing. During my free time, I help my mother or do some gardening. My areas of interest mainly include App development and Machine Learning.</p>
+            <h3 style="font-size: 24px;">Interests</h3>
+            <div class="services">
+                <div class="service-card">
+                    <div class="icon">
+                        <img src="images/ad_icon.png" alt="app" style="width: 60px; height: 60px;">
                     </div>
-                    <div class="service-card">
-                        <div class="icon">
-                            <img src="images/ui_icon.png" alt="ui/ux">
-                        </div>
-                        <h3 style="margin-top: 26px; font-size: 15px">UI/UX<br>Development</h3>
+                    <h3>App<br>Development</h3>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <img src="images/ui_icon.png" alt="ui/ux">
                     </div>
-                    <div class="service-card">
-                        <div class="icon">
-                            <img src="images/ml_icon.png" alt="ml">
-                        </div>
-                        <h3 style="margin-top: 26px; font-size: 15px">Machine<br>Learning</h3>
+                    <h3>UI/UX<br>Development</h3>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <img src="images/ml_icon.png" alt="ml">
                     </div>
-                    <div class="service-card">
-                        <div class="icon">
-                            <img src="images/db_icon.png" alt="dbms">
-                        </div>
-                        <h3 style="margin-top: 26px; font-size: 15px"> DBMS </h3>
+                    <h3>Machine<br>Learning</h3>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <img src="images/db_icon.png" alt="dbms">
                     </div>
+                    <h3> DBMS </h3>
                 </div>
             </div>
         </div>
-        <div class="section" id="projects" style="padding-right: 10%; padding-left: 30%;">
+    </div>
+    <!-- Continue with the rest of the sections in similar fashion -->
+    <div class="section" id="projects" style="padding-right: 10%; padding-left: 30%;">
             <h2>Projects</h2>
             <h3><a href="https://drive.google.com/drive/folders/1vsoNqL31C5NfG9VWTMiEOmKnnmTpQSvH?usp=drive_link" style="text-decoration: none;">Video based Intelligent Traffic Control System</a></h3>
             <p>An intelligent traffic signal control system that dynamically adjusts signal timings based on live vehicle count data , prioritizing the side of the intersection with higher vehicle counts.</p>
@@ -257,8 +243,8 @@
             <p>An Android application for MCQ type of quiz developed on Android Studio using java. It helps in practicing and conducting quiz competitions</p>
             <h3 style="margin-top: 20px;">Portfolio Website</h3>
             <p>A professional, visually appealing, and user-friendly online portfolio for showcasing individual skills, projects, and experiences. The website will serve as a digital resume.</p>
-        </div>
-        <div class="section" id="experience" style="padding-right: 10%; padding-left: 30%;">
+    </div>
+    <div class="section" id="experience" style="padding-right: 10%; padding-left: 30%;">
             <h2>Experience</h2>
             <h5 style="margin-top: 40px; color: #102d36;">Internships</h5>
             <h4>TEACHNOOK - Android App Development</h4>
@@ -275,8 +261,8 @@
                 <li>Data Science and Artificial Intelligence - Certified by Keltron</li>
                 <li>Android App Development - Certified by IIT Bombay and conducted by Teachnook</li>
             </ul>
-        </div>
-        <div class="section" id="skills" style="padding-right: 10%; padding-left: 30%;">
+    </div>
+    <div class="section" id="skills" style="padding-right: 10%; padding-left: 30%;">
             <h2 style="margin-bottom: 8%;">Tech-Skills</h2>
             <div class="skills">
                 <div class="skill-card">
@@ -328,8 +314,8 @@
                     <h3>Bootstrap</h3>
                 </div>
             </div>
-        </div>
-        <div class="section" id="education" style="padding-right: 7%; padding-left: 30%;">
+    </div>
+    <div class="section" id="education" style="padding-right: 7%; padding-left: 30%;">
             <h2 style="margin-bottom: 7%;">Education</h2>
             <div class="timeline">
                 <div class="timeline-item">
@@ -363,8 +349,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="section" id="activities" style="padding-right: 10%; padding-left: 30%;">
+    </div>
+    <div class="section" id="activities" style="padding-right: 10%; padding-left: 30%;">
             <h2>Activities</h2>
             <h3>Co-Curricular</h3>
             <ul>
@@ -383,8 +369,8 @@
                 <li>Secured Second place in Kodefiesta ,a Tech Fest coding event.</li>
                 <li>Secured Second place in Collagezilla .a digital poster designing event ,conducted by IEEE.</li>
             </ul>
-        </div> 
-        <div class="section" id="works" style="padding-right: 10%; padding-left: 30%;">
+    </div> 
+    <div class="section" id="works" style="padding-right: 10%; padding-left: 30%;">
             <h2>Works</h2>
             <h3 style="font-size: 22px; margin-bottom: 20px; margin-top: 30px;">UI/UX Designs</h3>
             <div class="design" style="gap: 10px;">
@@ -424,8 +410,8 @@
                     <a href="images/blog-6.png"><img src="images/blog-6.png" style="width: 100px; height: 130px;"></a>
                 </div>
             </div>
-        </div> 
-        <div class="section" id="contact" style="padding-right: 7%; padding-left: 30%;">
+    </div> 
+    <div class="section" id="contact" style="padding-right: 7%; padding-left: 30%;">
             <h2 style="margin-bottom: 35%;">Contact Info</h2>
             <div style="display: flex; flex-direction: row; gap: 80px; margin-top: -130px;">
                 <div style="display: flex; flex-direction: column;">
