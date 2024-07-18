@@ -109,6 +109,57 @@
                 transform: translateY(-5px);
             }
         }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .hero img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .nav {
+                width: 100px;
+                height: auto;
+                margin-left: 0;
+                padding: 10px 0;
+            }
+
+            .nav a {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .nav {
+                width: 80px;
+                padding: 8px 0;
+            }
+
+            .nav a {
+                font-size: 10px;
+            }
+        }
     </style>
 </head>
 <body>
