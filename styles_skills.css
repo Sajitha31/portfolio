@@ -66,61 +66,10 @@ h3 {
 .skill-card:nth-child(6) .skill-icon {
     background-color: white; /* Dark Blue */
 }
-
 .skill-card:nth-child(7) .skill-icon {
     background-color: white; /* Dark Blue */
 }
-
 .skill-card:nth-child(8) .skill-icon {
     background-color: white; /* Dark Blue */
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .skill-card {
-        width: 80px; /* Smaller width for medium screens */
-        padding: 15px;
-    }
-
-    .skill-icon {
-        width: 40px;
-        height: 40px;
-        padding: 15px;
-    }
-
-    .skill-icon img {
-        width: 30px;
-        height: 30px;
-    }
-
-    h3 {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .skills {
-        flex-direction: column; /* Stacks items vertically on small screens */
-        align-items: center;
-    }
-
-    .skill-card {
-        width: 80%; /* Use a percentage width for small screens */
-        padding: 10px;
-    }
-
-    .skill-icon {
-        width: 30px;
-        height: 30px;
-        padding: 10px;
-    }
-
-    .skill-icon img {
-        width: 20px;
-        height: 20px;
-    }
-
-    h3 {
-        font-size: 11px;
-    }
-}
